@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Script:                 Ops 301 Ops Chall 01
+# Author:                 Kimberly Dills
+# Date of last revision:  09/01/2020
+# Description of purpose: 
+
+# How to show time and date
+
+# Running date command from terminal gives a general output
+
+# Here we assign variables but you can run these commands on their own without the `outside the command string. These are modi>
+
+# Declaration of variables:
+
+year=`date +%Y`
+month=`date +%m`
+day=`date +%d`
+hour=`date +%H`
+minute=`date +%M`
+second=`date +%S`
+# echo `date`
+# echo "Current Date: $day-$month-$year"
+# echo "Current Time: $hour:$minute:$second"
+
+cp /var/log/syslog timeanddate.txt
+
+# The >> double carrot here will row append
+
+echo "$day-$month-$year $hour:$minute:$second " >> timeanddate.txt
+echo "Appended file:"
+cat timeanddate.txt
+
+
+# Declaration of functions:
+# Main
+# End 
