@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Script name:  filepermissions
+# Author:       Kimberly Dills
+# Date of last revision: 9/2/2020
+# Description of purpose: Alter file permission of everything in a directory
+# Declaration of variables:
+# Delcaration of functions:
+
+# Main
+
+read -p "what directory do you want to change permission " directory
+echo "this is before the change"
+# before the change
+ls -ls $directory
+# this is to prompt user what permission 
+read -p "what permissions do you want to give " permission
+
+# change moderator permission using the variables that have been stored from user's input
+
+sudo chmod -R $permission $directory
+echo "this is afer the change"
+# this is the final output to show the user that the change has taken place
+ls -la $directory
+
+# End
