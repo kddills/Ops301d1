@@ -1,0 +1,8 @@
+Kimberly Dills 9/4/2020 Seattle-ops-301d1:Reading Class 05
+
+Readings: Linux DNS Server
+
+DNS was developed as almost a phone book that translates the domain you enter into your browser since computers only communicate using a series of numbers. DNS stands for Domain Name System, which is what converts human readable domain names into an IP address made up of numbers. DNS are distributed all around the world and the nameservers are called the root name servers and instead of storing every domain ever, they store the locations of the top level domains. 
+
+Ubuntu servers is a serving operating system that is an open source programming from around the world that can serve websites, file share, and containers. Ubuntu is a server platform that anyone can use for the websites, email servers, development platform, cloud services, databaser server. Ubuntu Servers has a few minimum requirements, RAM 512MB, CPU 1Hz
+Storage: 1 GB disk space 
