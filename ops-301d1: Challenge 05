@@ -1,0 +1,36 @@
+#!/bin/bash/sudo bash
+
+echo -n "Enter password for sudo rights: "
+read -s osboxes.org
+
+echo $pass | sudo -S [your command here]
+
+# Script Name: Ops Challenge 05
+# Author:    Kimberly Dills
+# Date:      9/4/2020
+# Description of purpose:Automated log clearing
+# Declaration of variables:
+# Main
+# Remove contents in /var/log/syslog
+
+cat /var/log/syslog
+
+osboxes
+[sudo] osboxes.org for osboxes
+
+> /var/log/syslog
+echo $cat /var/log/syslog
+
+# Clean log files
+
+# Remove /var/log/wtmp
+echo -n "Enter password for sudo rights: "
+read -s osboxes.org
+
+echo $pass | sudo -S [your command here]
+cat /var/log/wtmp
+
+> /var/log/wtmp
+echo $cat /var/log/wtmp
+
+# End
