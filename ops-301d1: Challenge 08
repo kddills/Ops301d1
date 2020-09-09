@@ -1,0 +1,23 @@
+# Script Name:           Ops Challenge 08
+# Author:                Kimberly Dills
+# Date of last revision: 9/9/2020
+# Description of purpose:Powershell AD Automation
+ 
+function CreateU()
+{
+    New-AdUser `
+      -Name "Franz Ferdinand" `
+      -GivenName "Fredinand" `
+      -Surname "Ferdinand" `
+      -Company "Globex Nuclear" `
+      -Title "TPS Reporting Lead" `
+      -City "Springfield" `
+      -State "OR"
+      -Department "TPS Department" `
+      -DisplayName "Franz Ferdinand" `
+      -EmailAddress "ferdi@globexnuclear.com" `
+      -Country "USA"
+}
+
+CreateU
+      
