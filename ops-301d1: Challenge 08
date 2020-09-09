@@ -7,7 +7,7 @@ function CreateU()
 {
     New-AdUser `
       -Name "Franz Ferdinand" `
-      -GivenName "Fredinand" `
+      -GivenName "Franz" `
       -Surname "Ferdinand" `
       -Company "Globex Nuclear" `
       -Title "TPS Reporting Lead" `
