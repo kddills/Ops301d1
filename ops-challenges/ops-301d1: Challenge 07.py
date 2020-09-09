@@ -4,7 +4,7 @@
 # Description of purpose: To utilize commands that's available in bash using python script file
 
 # Bringing os library
-
+ 
 import os
 
 # Declaration of variables:
