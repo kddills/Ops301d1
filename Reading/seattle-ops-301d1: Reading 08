@@ -1,0 +1,5 @@
+Kimberly Dills 9/9/2020 seattle-ops-301d1: Reading 01
+
+Readings: Identity Management
+
+The fundamentals of Active Directory, workgroups and domains is commonly referred to as AD. AD is the most deployed component of AD. It’s a way to add a new user and all their information to the system and then you can push it into a OU, which stands for Organizational Unit. OU is a container within your domain that holds users, groups, computers, and other objects. You can use an OU to store similar objects which make it easy to access and to administer them. An OU will be contained within a single domain. You can set different group policies and push them out to users and groups within a domain. Then you can run the gpupdate /force that pushes them all out to the different groups and users. 
