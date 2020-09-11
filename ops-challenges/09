@@ -1,0 +1,19 @@
+# Script Name:        Ops Challenge 09
+# Author:             Kimberly Dills
+# Date of last revision: 9/10/2020
+# Description of purpose: Python Collections
+
+# Assign to a variable a list of ten string elements
+flowers = ["Dahlia", "Violet", "Orchids", "Lily", "Rose", "Sunflower", "Tulip", "Gardenia", "Carnation", "Peonie"]
+
+# Print the fourth element of the list
+print(flowers[3])
+
+# Print the sixth through tenth element of the list
+print(flowers[5:11])
+
+# Change the value of the seventh element to “onion”
+flowers[6] = "Onion"
+print(flowers)
+
+# End
