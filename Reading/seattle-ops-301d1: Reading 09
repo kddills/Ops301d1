@@ -1,0 +1,7 @@
+Kimberly Dills 9/10/2020 seattle-ops-301d1: Reading 09
+
+Readings: OSPF Routing
+
+Routers send IP packets across the network and they forward decisions that are based on the destination IP address. Each router only knows the next step, the packet then asks for directions every hop along the way, and a list of directions is held in a routing table. The network administrator can add the routes manually. The advantages to static routing are that they are easy to configure and manage on a smaller network. There is no overhead from routing protocols such as memory, CPU, or bandwidth. It can be easy to configure on sub networks, and it ends up being more secure.
+
+Some of the disadvantages are that it can be difficult to administer on a larter network. There is no automatic method to prevent routing loops. If there is a network change, you have to manually update the routes, and there is no automatic rerouting if an outage takes place. 
