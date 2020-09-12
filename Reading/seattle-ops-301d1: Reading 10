@@ -1,0 +1,6 @@
+Kimberly Dills 9/11/2020 seattle-ops-301d1: Reading 10
+
+Readings: Linux Web Server
+
+The term web server can refer to hardware and or software or both of them working together. On the hardware side, a web server is a computer that stores web server software and a websites component files. A web server connects to the internet and supports physical data interchange with other devices that are connected to the web. The software side is a web server that includes several parts that control how web users access hosted files. At a minimum this is what most think of as an HTTP server. The HTTP server is software that understands URLs and HTTP. The HTTP server can be accessed through the domain names of the websites it stores, and it delivers the content of these hosted websites to the end user’s device. The static web server and the dynamic web server are examples. 
+The DMZ network is also known as the demilitarized zone. It functions as a subnetwork that holds and organizations exposed, outward facing services. It acts as the exposed point to an untrusted networks, also known as the internet.  
