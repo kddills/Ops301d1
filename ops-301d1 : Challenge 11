@@ -1,0 +1,24 @@
+# Script Name: Ops Challenge 11
+# Author:      Kimberly Dills
+# Date of last revision: 9/14/2020
+# Description of purpose: Python File Handling
+
+import os 
+
+# Description of variables:
+# Description of functions:
+
+# Using file handling commands, create a Python script that creates a new .txt file, appends three lines, prints to the screen the first line, then deletes the .txt file.
+
+# Main 
+
+file = open("log.txt", "w")
+file.write("Hello Kitty! \n")
+file.write("Kitty's Rule! \n")
+file.write("Nyan Cat Forever! ")
+file =open("log.txt", "r")
+print(file.readlines()[0])
+os.remove("log.txt")
+
+
+# End
