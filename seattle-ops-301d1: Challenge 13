@@ -1,0 +1,21 @@
+# Script name:               Ops Challenge 13
+# Author:                    Kimberly Dills
+# Date of last revision:     9/16/2020
+# Description of purpose:    Python Requests Library
+
+# Declaration of variables:  
+# Declaration of functions:
+
+import requests  
+
+# Assign a reqest.get function to a variable. Be sure to pass a parameter (the URL) into the function for it to work
+
+response = requests.get('http://api.github.com/users/kddills')
+
+# Print the status code obtained by the function using [var name].status code
+
+print(response.status_code)
+
+# Print the entire information from my github
+
+print(response.__dict__)
