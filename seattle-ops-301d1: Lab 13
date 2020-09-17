@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_SeattleOpsLab13Win19_name": {
+            "defaultValue": "SeattleOpsLab13Win19",
+            "type": "String"
+        },
+        "disks_SeattleOpsLab13Win19_disk1_7259a5e583ad47abb396bf33b4e4a02d_externalid": {
+            "defaultValue": "/subscriptions/b9e28be7-e12a-4f5b-9fa6-6111bfb4111c/resourceGroups/SEATTLEOPSLAB13WIN19_GROUP/providers/Microsoft.Compute/disks/SeattleOpsLab13Win19_disk1_7259a5e583ad47abb396bf33b4e4a02d",
+            "type": "String"
+        },
+        "networkInterfaces_seattleopslab13win19826_externalid": {
+            "defaultValue": "/subscriptions/b9e28be7-e12a-4f5b-9fa6-6111bfb4111c/resourceGroups/SeattleOpsLab13Win19_group/providers/Microsoft.Network/networkInterfaces/seattleopslab13win19826",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('virtualMachines_SeattleOpsLab13Win19_name')]",
+            "location": "westus2",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B1s"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_SeattleOpsLab13Win19_name'), '_disk1_7259a5e583ad47abb396bf33b4e4a02d')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('disks_SeattleOpsLab13Win19_disk1_7259a5e583ad47abb396bf33b4e4a02d_externalid')]"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "SeattleOpsLab13",
+                    "adminUsername": "Kdills253",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_seattleopslab13win19826_externalid')]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "https://seattleopslab13win19grou.blob.core.windows.net/"
+                    }
+                }
+            }
+        }
+    ]
+}
