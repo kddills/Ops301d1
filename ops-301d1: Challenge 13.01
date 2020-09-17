@@ -1,0 +1,42 @@
+# Script name:               Ops Challenge 13
+# Author:                    Kimberly Dills
+# Date of last revision:     9/16/2020
+# Description of purpose:    Python Requests Library HHTP GET request
+
+import requests  
+
+# Declaration of variables
+# response = requests.get('https://api.github.com/users/kddills')
+# print(response.status_code)
+# print(response.__dict__)
+
+person = input('Enter your destination URL, please put https: ')
+print('You entered', person)
+
+HTTPMod = ("GET \n" "POST \n" "PUT \n" "DELETE \n" "HEAD \n" "PATCH \n" "OPTIONS \n")
+print(HTTPMod)
+tinyHead = input('Select a HTTP Method from the following:')
+
+print('You entered', person, 'and Selected', tinyHead, 'HTTP Method, Please confirm before proceeding.')
+answer = input("Enter yes or no:")
+
+
+if answer =="yes":
+    response = requests.get(person)
+    print(response)
+elif anser =="no":
+    print("no")
+else:
+    print("Please enter yes or no.")
+
+
+if response.status_code == 200:
+    print('Success!')
+elif response.status_code == 404:
+    print('Not Found.')
+
+# Declaration of funtions
+
+# Main
+
+# End
